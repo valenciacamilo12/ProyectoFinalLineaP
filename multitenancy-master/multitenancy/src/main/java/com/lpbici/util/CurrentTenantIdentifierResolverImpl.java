@@ -8,7 +8,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 @Component
 public class CurrentTenantIdentifierResolverImpl implements CurrentTenantIdentifierResolver {
 
-	private static final String DEFAULT_TENANT_ID = "tenant_1";
+	private static final String DEFAULT_TENANT_ID = "monolito";
 
 	@Override
 	public String resolveCurrentTenantIdentifier() {

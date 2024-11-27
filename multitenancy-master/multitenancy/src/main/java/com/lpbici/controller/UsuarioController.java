@@ -1,5 +1,6 @@
 package com.lpbici.controller;
 
+import com.lpbici.entity.Producto;
 import com.lpbici.entity.Rol;
 import com.lpbici.entity.Usuario;
 import enums.RolNombre;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Controller
@@ -62,6 +64,15 @@ public class UsuarioController {
         usuarioService.save(usuario);
         mv.setViewName("/login");
         mv.addObject("registroOK", "Cuenta creada, " + usuario.getNombreUsuario() + ", ya puedes iniciar sesión");
+        return mv;
+    }
+
+    @RequestMapping(value = "lista", method = RequestMethod.GET)
+    public ModelAndView list(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("/usuario/lista");
+        List<Usuario> usuarios = usuarioService.lista();
+        mv.addObject("usuarios", usuarios);
         return mv;
     }
 

@@ -26,6 +26,20 @@ public class DataSourceConfig {
 		return factory.build();
 	}
 
+	@Bean(name = "dataSource0")
+	@ConfigurationProperties(prefix = "spring.multitenancy.datasource0")
+	public DataSource dataSource0() {
+		DataSourceBuilder factory = DataSourceBuilder
+				.create(this.multitenancyProperties.getDatasource0().getClassLoader())
+				.driverClassName(this.multitenancyProperties.getDatasource0().getDriverClassName())
+				.username(this.multitenancyProperties.getDatasource0().getUsername())
+				.password(this.multitenancyProperties.getDatasource0().getPassword())
+				.url(this.multitenancyProperties.getDatasource0().getUrl());
+		return factory.build();
+	}
+
+
+
 	@Bean(name = "dataSource2")
 	@ConfigurationProperties(prefix = "spring.multitenancy.datasource2")
 	public DataSource dataSource2() {

@@ -6,6 +6,24 @@
       "sourceType": "com.lpbici.config.MultitenancyProperties"
     },
     {
+      "name": "spring.multitenancy.datasource0",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.lpbici.config.DataSourceConfig",
+      "sourceMethod": "dataSource0()"
+    },
+    {
+      "name": "spring.multitenancy.datasource0",
+      "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
+      "sourceType": "com.lpbici.config.MultitenancyProperties",
+      "sourceMethod": "getDatasource0()"
+    },
+    {
+      "name": "spring.multitenancy.datasource0.xa",
+      "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
+      "sourceMethod": "getXa()"
+    },
+    {
       "name": "spring.multitenancy.datasource1",
       "type": "javax.sql.DataSource",
       "sourceType": "com.lpbici.config.DataSourceConfig",
@@ -206,6 +224,66 @@
   ],
   "properties": [
     {
+      "name": "spring.multitenancy.datasource0.continue-on-error",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "spring.multitenancy.datasource0.data",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "spring.multitenancy.datasource0.driver-class-name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "spring.multitenancy.datasource0.initialize",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "spring.multitenancy.datasource0.jndi-name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "spring.multitenancy.datasource0.password",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "spring.multitenancy.datasource0.platform",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "spring.multitenancy.datasource0.schema",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "spring.multitenancy.datasource0.separator",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "spring.multitenancy.datasource0.sql-script-encoding",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "spring.multitenancy.datasource0.url",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "spring.multitenancy.datasource0.username",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
       "name": "spring.multitenancy.datasource1.continue-on-error",
       "type": "java.lang.Boolean",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
@@ -262,17 +340,12 @@
     },
     {
       "name": "spring.multitenancy.datasource1.data",
-      "type": "java.util.List<java.lang.String>",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
       "name": "spring.multitenancy.datasource1.data",
-      "type": "java.util.List<java.lang.String>",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.data",
-      "type": "java.util.List<java.lang.String>",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
@@ -296,32 +369,7 @@
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource1.data-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.data-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.data-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.data-username",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.data-username",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.data-username",
+      "name": "spring.multitenancy.datasource1.data",
       "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
@@ -368,36 +416,6 @@
     {
       "name": "spring.multitenancy.datasource1.driver-class-name",
       "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.generate-unique-name",
-      "type": "java.lang.Boolean",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.generate-unique-name",
-      "type": "java.lang.Boolean",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.generate-unique-name",
-      "type": "java.lang.Boolean",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.initialization-mode",
-      "type": "org.springframework.boot.jdbc.DataSourceInitializationMode",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.initialization-mode",
-      "type": "org.springframework.boot.jdbc.DataSourceInitializationMode",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.initialization-mode",
-      "type": "org.springframework.boot.jdbc.DataSourceInitializationMode",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
@@ -431,8 +449,18 @@
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource1.jndi-name",
-      "type": "java.lang.String",
+      "name": "spring.multitenancy.datasource1.initialize",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "spring.multitenancy.datasource1.initialize",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "name": "spring.multitenancy.datasource1.initialize",
+      "type": "java.lang.Boolean",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
@@ -476,19 +504,14 @@
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource1.name",
+      "name": "spring.multitenancy.datasource1.jndi-name",
       "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource1.name",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.name",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+      "name": "spring.multitenancy.datasource1.login-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "javax.sql.DataSource"
     },
     {
       "name": "spring.multitenancy.datasource1.password",
@@ -592,17 +615,12 @@
     },
     {
       "name": "spring.multitenancy.datasource1.schema",
-      "type": "java.util.List<java.lang.String>",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
       "name": "spring.multitenancy.datasource1.schema",
-      "type": "java.util.List<java.lang.String>",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.schema",
-      "type": "java.util.List<java.lang.String>",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
@@ -626,32 +644,7 @@
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource1.schema-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.schema-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.schema-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.schema-username",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.schema-username",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.schema-username",
+      "name": "spring.multitenancy.datasource1.schema",
       "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
@@ -712,21 +705,6 @@
     },
     {
       "name": "spring.multitenancy.datasource1.sql-script-encoding",
-      "type": "java.nio.charset.Charset",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.sql-script-encoding",
-      "type": "java.nio.charset.Charset",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.sql-script-encoding",
-      "type": "java.nio.charset.Charset",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource1.sql-script-encoding",
       "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
@@ -746,18 +724,18 @@
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource1.type",
-      "type": "java.lang.Class<? extends javax.sql.DataSource>",
+      "name": "spring.multitenancy.datasource1.sql-script-encoding",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource1.type",
-      "type": "java.lang.Class<? extends javax.sql.DataSource>",
+      "name": "spring.multitenancy.datasource1.sql-script-encoding",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource1.type",
-      "type": "java.lang.Class<? extends javax.sql.DataSource>",
+      "name": "spring.multitenancy.datasource1.sql-script-encoding",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
@@ -907,17 +885,12 @@
     },
     {
       "name": "spring.multitenancy.datasource2.data",
-      "type": "java.util.List<java.lang.String>",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
       "name": "spring.multitenancy.datasource2.data",
-      "type": "java.util.List<java.lang.String>",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.data",
-      "type": "java.util.List<java.lang.String>",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
@@ -941,32 +914,7 @@
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource2.data-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.data-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.data-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.data-username",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.data-username",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.data-username",
+      "name": "spring.multitenancy.datasource2.data",
       "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
@@ -1016,33 +964,18 @@
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource2.generate-unique-name",
+      "name": "spring.multitenancy.datasource2.initialize",
       "type": "java.lang.Boolean",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource2.generate-unique-name",
+      "name": "spring.multitenancy.datasource2.initialize",
       "type": "java.lang.Boolean",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource2.generate-unique-name",
+      "name": "spring.multitenancy.datasource2.initialize",
       "type": "java.lang.Boolean",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.initialization-mode",
-      "type": "org.springframework.boot.jdbc.DataSourceInitializationMode",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.initialization-mode",
-      "type": "org.springframework.boot.jdbc.DataSourceInitializationMode",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.initialization-mode",
-      "type": "org.springframework.boot.jdbc.DataSourceInitializationMode",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
@@ -1121,19 +1054,9 @@
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource2.name",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.name",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.name",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+      "name": "spring.multitenancy.datasource2.login-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "javax.sql.DataSource"
     },
     {
       "name": "spring.multitenancy.datasource2.password",
@@ -1237,17 +1160,12 @@
     },
     {
       "name": "spring.multitenancy.datasource2.schema",
-      "type": "java.util.List<java.lang.String>",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
       "name": "spring.multitenancy.datasource2.schema",
-      "type": "java.util.List<java.lang.String>",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.schema",
-      "type": "java.util.List<java.lang.String>",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
@@ -1271,32 +1189,7 @@
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource2.schema-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.schema-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.schema-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.schema-username",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.schema-username",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.schema-username",
+      "name": "spring.multitenancy.datasource2.schema",
       "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
@@ -1357,21 +1250,6 @@
     },
     {
       "name": "spring.multitenancy.datasource2.sql-script-encoding",
-      "type": "java.nio.charset.Charset",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.sql-script-encoding",
-      "type": "java.nio.charset.Charset",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.sql-script-encoding",
-      "type": "java.nio.charset.Charset",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource2.sql-script-encoding",
       "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
@@ -1391,18 +1269,18 @@
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource2.type",
-      "type": "java.lang.Class<? extends javax.sql.DataSource>",
+      "name": "spring.multitenancy.datasource2.sql-script-encoding",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource2.type",
-      "type": "java.lang.Class<? extends javax.sql.DataSource>",
+      "name": "spring.multitenancy.datasource2.sql-script-encoding",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource2.type",
-      "type": "java.lang.Class<? extends javax.sql.DataSource>",
+      "name": "spring.multitenancy.datasource2.sql-script-encoding",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
@@ -1552,17 +1430,12 @@
     },
     {
       "name": "spring.multitenancy.datasource3.data",
-      "type": "java.util.List<java.lang.String>",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
       "name": "spring.multitenancy.datasource3.data",
-      "type": "java.util.List<java.lang.String>",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.data",
-      "type": "java.util.List<java.lang.String>",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
@@ -1586,32 +1459,7 @@
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource3.data-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.data-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.data-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.data-username",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.data-username",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.data-username",
+      "name": "spring.multitenancy.datasource3.data",
       "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
@@ -1661,33 +1509,18 @@
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource3.generate-unique-name",
+      "name": "spring.multitenancy.datasource3.initialize",
       "type": "java.lang.Boolean",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource3.generate-unique-name",
+      "name": "spring.multitenancy.datasource3.initialize",
       "type": "java.lang.Boolean",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource3.generate-unique-name",
+      "name": "spring.multitenancy.datasource3.initialize",
       "type": "java.lang.Boolean",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.initialization-mode",
-      "type": "org.springframework.boot.jdbc.DataSourceInitializationMode",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.initialization-mode",
-      "type": "org.springframework.boot.jdbc.DataSourceInitializationMode",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.initialization-mode",
-      "type": "org.springframework.boot.jdbc.DataSourceInitializationMode",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
@@ -1766,19 +1599,9 @@
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource3.name",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.name",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.name",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+      "name": "spring.multitenancy.datasource3.login-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "javax.sql.DataSource"
     },
     {
       "name": "spring.multitenancy.datasource3.password",
@@ -1882,17 +1705,12 @@
     },
     {
       "name": "spring.multitenancy.datasource3.schema",
-      "type": "java.util.List<java.lang.String>",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
       "name": "spring.multitenancy.datasource3.schema",
-      "type": "java.util.List<java.lang.String>",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.schema",
-      "type": "java.util.List<java.lang.String>",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
@@ -1916,32 +1734,7 @@
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource3.schema-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.schema-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.schema-password",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.schema-username",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.schema-username",
-      "type": "java.lang.String",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.schema-username",
+      "name": "spring.multitenancy.datasource3.schema",
       "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
@@ -2002,21 +1795,6 @@
     },
     {
       "name": "spring.multitenancy.datasource3.sql-script-encoding",
-      "type": "java.nio.charset.Charset",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.sql-script-encoding",
-      "type": "java.nio.charset.Charset",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.sql-script-encoding",
-      "type": "java.nio.charset.Charset",
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
-      "name": "spring.multitenancy.datasource3.sql-script-encoding",
       "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
@@ -2036,18 +1814,18 @@
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource3.type",
-      "type": "java.lang.Class<? extends javax.sql.DataSource>",
+      "name": "spring.multitenancy.datasource3.sql-script-encoding",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource3.type",
-      "type": "java.lang.Class<? extends javax.sql.DataSource>",
+      "name": "spring.multitenancy.datasource3.sql-script-encoding",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
-      "name": "spring.multitenancy.datasource3.type",
-      "type": "java.lang.Class<? extends javax.sql.DataSource>",
+      "name": "spring.multitenancy.datasource3.sql-script-encoding",
+      "type": "java.lang.String",
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {

@@ -8,6 +8,8 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
 public class MultitenancyProperties {
 
 	@NestedConfigurationProperty
+	private DataSourceProperties datasource0;
+	@NestedConfigurationProperty
 	private DataSourceProperties datasource1;
 
 	@NestedConfigurationProperty
@@ -39,5 +41,11 @@ public class MultitenancyProperties {
 	public void setDatasource3(DataSourceProperties datasource3) {
 		this.datasource3 = datasource3;
 	}
+
+	public DataSourceProperties getDatasource0() {
+		return datasource0;
+	}
+
+	public void setDatasource0(DataSourceProperties datasource0) {this.datasource0 = datasource0;}
 
 }

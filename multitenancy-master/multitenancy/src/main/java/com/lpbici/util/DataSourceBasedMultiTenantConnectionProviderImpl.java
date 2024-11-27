@@ -16,11 +16,13 @@ public class DataSourceBasedMultiTenantConnectionProviderImpl extends AbstractDa
 	private static final String DEFAULT_TENANT_ID = "tenant_1";
 
 	@Autowired
+	private DataSource dataSource0;
+
+	@Autowired
 	private DataSource dataSource1;
 
 	@Autowired
 	private DataSource dataSource2;
-
 	@Autowired
 	private DataSource dataSource3;
 
@@ -29,6 +31,9 @@ public class DataSourceBasedMultiTenantConnectionProviderImpl extends AbstractDa
 	@PostConstruct
 	public void load() {
 		map = new HashMap<>();
+		if (dataSource0 != null) {
+			map.put("monolito", dataSource0);
+		}
 		map.put("tenant_1", dataSource1);
 		map.put("tenant_2", dataSource2);
 		map.put("tenant_3", dataSource3);
