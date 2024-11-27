@@ -20,6 +20,10 @@ public class ProductoController {
 
     @Autowired
     ProductoService productoService;
+    @RequestMapping(value = "/categorias", method = RequestMethod.GET)
+    public String Catergorias(){
+        return "producto/categorias";
+    }
 
     @RequestMapping(value = "lista", method = RequestMethod.GET)
     public ModelAndView list(){
