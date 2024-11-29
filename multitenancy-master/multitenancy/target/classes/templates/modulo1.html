@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head  th:fragment="headerfiles">
+    <title>Bici+</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+    <link rel="icon" type="img/png" th:href="@{https://www.thymeleaf.org/images/thymeleaf.png}"></link>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"></link>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
+
+   <meta charset='UTF-8'>
+    <meta name="robots" content="noindex">
+    <link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
+    <link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+    <link rel="canonical" href="https://codepen.io/ryanparag/pen/oWrLPr?depth=everything&amp;order=popularity&amp;page=5&amp;q=card+list&amp;show_forks=false" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'></link>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'></link>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </meta>
+
+    </meta>
+    </meta>
+    </meta>
+</head>
+<body>
+<header th:insert="fragments :: nav"></header>
+
+<div th:fragment="nav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <a class="navbar-brand" href="#">Bici+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/}">
+                        <i class="fas fa-home"></i> Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active" sec:authorize="isAuthenticated() &amp;&amp; !hasRole('ADMIN')">
+                    <a class="nav-link" th:href="@{/producto/lista}">
+                        <i class="far fa-list-alt"></i> Lista</a>
+                </li>
+                <li class="nav-item dropdown active" sec:authorize="hasRole('ADMIN')">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-toolbox"></i> Administración
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" th:href="@{/producto/lista}">
+                            <i class="far fa-list-alt"></i> Lista</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" th:href="@{/producto/nuevo}">
+                            <i class="fas fa-plus-circle"></i> Nuevo Producto</a>
+                    </div>
+                </li>
+            </ul>
+
+            <form sec:authorize="isAuthenticated()" class="form-inline my-2 my-lg-0" th:action="@{/logout}" method="post">
+                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                </button>
+            </form>
+
+        </div>
+    </nav>
+</div>
+
+<div id="movie-card-list">
+    <!-- Card 1: Blade Runner -->
+    <div class="movie-card">
+        <div class="color-overlay">
+            <div class="movie-share">
+                <a class="movie-share__icon" href="#">
+                    <i class="material-icons">&#xe87d;</i>
+                </a>
+                <a class="movie-share__icon" href="#">
+                    <i class="material-icons">&#xe253;</i>
+                </a>
+            </div>
+            <div class="movie-content">
+                <div class="movie-header">
+                    <h1 class="movie-title"> Monitoreo en tiempo real</h1>
+                </div>
+                    <div class="dropdown">
+                        <button class="btn btn-outline" type="button" data-toggle="dropdown">Menu
+                            </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Monitoreo de rendimiento</a></li>
+                            <li><a href="#">Monitoreo del estado de bienestar durante las sesiones de mindfulness</a></li>
+                            <li><a href="#">Monitoreo del progreso y asistencia en tiempo real durante los recorridos</a></li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 2: Back to the Future -->
+    <div class="movie-card">
+        <div class="color-overlay">
+            <div class="movie-share">
+                <a class="movie-share__icon" href="#">
+                    <i class="material-icons">&#xe87d;</i>
+                </a>
+                <a class="movie-share__icon" href="#">
+                    <i class="material-icons">&#xe253;</i>
+                </a>
+            </div>
+            <div class="movie-content">
+                <div class="movie-header">
+                    <h1 class="movie-title"> Alertas en tiempo real</h1>
+                </div>
+                <p class="movie-desc"></p>
+
+                <div class="dropdown">
+                    <button class="btn btn-outline" type="button" data-toggle="dropdown">Menu
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Tráfico,seguridad y sugerencias de mejora</a></li>
+                        <li><a href="#">Recordatorios De Uso</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 3: Akira -->
+    <div class="movie-card">
+        <div class="color-overlay">
+            <div class="movie-share">
+                <a class="movie-share__icon" href="#">
+                    <i class="material-icons">&#xe87d;</i>
+                </a>
+                <a class="movie-share__icon" href="#">
+                    <i class="material-icons">&#xe253;</i>
+                </a>
+            </div>
+            <div class="movie-content">
+                <div class="movie-header">
+                    <h1 class="movie-title">Integración con comunidad</h1>
+                    <h4 class="movie-info"></h4>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-outline" type="button" data-toggle="dropdown">Menu
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Colaboración entre ciclistas</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style class="cp-pen-styles">@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800");
+body {
+  background-color: #dce1e5;
+  font-family: "Montserrat", helvetica, arial, sans-serif;
+  font-size: 14px;
+  color: #cfd6e1;
+  line-height: 1.5;
+  font-weight: 400;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+a {
+  text-decoration: none;
+}
+
+.movie-card {
+  background-image: url("https://img.freepik.com/foto-gratis/hombre-tiro-completo-montando-bicicleta-al-aire-libre_23-2150040519.jpg");
+  background-size: contain;
+  background-position: -20% 90%;
+  background-repeat: no-repeat;
+  width: 75%;
+  max-width: 1000px;
+  height: 300px;
+  display: block;
+  margin: 8vh auto;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.25);
+}
+
+.movie-card:nth-child(2) {
+  background-image: url("https://img.freepik.com/fotos-premium/luz-roja-azul_1048944-30379296.jpg");
+  background-position: -20% 80%;
+}
+
+.movie-card:nth-child(3) {
+  background-image: url("https://cdn.pixabay.com/photo/2022/10/29/21/28/bicycle-7556160_1280.jpg");
+  background-position: -20% 80%;
+}
+
+.color-overlay {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(42, 159, 255, 0.2)), color-stop(60%, #212120), to(#212120));
+  background: linear-gradient(to right, rgba(42, 159, 255, 0.2) 0%, #212120 60%, #212120 100%);
+  background-blend-mode: multiply;
+}
+
+h1, h2, h3 {
+  font-family: "Montserrat", helvetica, arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.movie-content {
+  width: 40%;
+  display: block;
+  position: relative;
+  float: right;
+  padding-right: 1em;
+}
+.movie-content .movie-title {
+  color: #ffffff;
+  margin-bottom: .25em;
+  opacity: .75;
+}
+.movie-content .movie-info {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .8em;
+  color: #2a9fff;
+  line-height: 1;
+  margin: 0;
+  font-weight: 700;
+  opacity: .5;
+}
+.movie-content .movie-header {
+  margin-bottom: 2em;
+}
+.movie-content .movie-desc {
+  font-weight: 300;
+  opacity: .84;
+  margin-bottom: 2em;
+}
+
+.btn {
+  padding: .8em 2em;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 3px solid #ffffff;
+}
+
+.btn::before {
+  font-family: 'Material Icons';
+  content: '\e037';
+  vertical-align: middle;
+  font-size: 1.5em;
+  padding-right: .5em;
+}
+
+.btn-outline:hover {
+  border-color: #2a9fff;
+  color: #2a9fff;
+  -webkit-box-shadow: 0px 1px 8px 0px rgba(245, 199, 0, 0.2);
+          box-shadow: 0px 1px 8px 0px rgba(245, 199, 0, 0.2);
+}
+
+.movie-share {
+  padding: 1em;
+  display: inline-block;
+  width: 15%;
+}
+
+.movie-share__icon i {
+  font-size: 1.2em;
+  margin-left: .5em;
+  color: #ffffff;
+  mix-blend-mode: lighten;
+  opacity: .4;
+}
+
+.movie-share__icon i:hover {
+  opacity: 1;
+  mix-blend-mode: lighten;
+}
+
+@media (max-width: 1000px) {
+  .movie-content {
+    width: 50%;
+    max-width: 95%;
+  }
+}
+@media (max-width: 800px) {
+  .movie-card {
+    width: 95%;
+    max-width: 95%;
+  }
+}
+@media (max-width: 600px) {
+  .movie-card, .movie-card:nth-child(2), .movie-card:nth-child(3) {
+    background-position: 50% 0%;
+    background-size: cover;
+    height: 400px;
+  }
+
+  .color-overlay {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(42, 159, 255, 0.2)), color-stop(60%, #212120), to(#212120));
+    background: linear-gradient(to bottom, rgba(42, 159, 255, 0.2) 0%, #212120 60%, #212120 100%);
+  }
+
+  .movie-content {
+    margin-top: 4.2em;
+    width: 90%;
+  }
+
+  .movie-share {
+    display: block;
+    width: 100%;
+  }
+}
+</style>
+<footer th:fragment="footer" class="footer mt-auto py-3 text-center dark bg-dark fixed-bottom">
+    <div class="container">
+        <span class="text-muted">&copy;Bici+</span>
+    </div>
+
+    <div th:fragment="scripts">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </div>
+
+</footer>
+</body>
+</html>

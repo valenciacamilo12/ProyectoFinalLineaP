@@ -18,6 +18,16 @@ public class HomeController {
         return "login";
     }
 
+    @RequestMapping(value = "/login1", method = RequestMethod.GET)
+    public String login1(){
+        return "login1";
+    }
+
+    @RequestMapping(value = "/modulo1", method = RequestMethod.GET)
+    public String modulo1(){
+        return "modulo1";
+    }
+
     @RequestMapping(value = "/forbidden", method = RequestMethod.GET)
     public String forbidden(){
         return "forbidden";
