@@ -20,33 +20,6 @@ public class ProductoController {
 
     @Autowired
     ProductoService productoService;
-    @RequestMapping(value = "/categorias", method = RequestMethod.GET)
-    public String catergorias(){
-        return "producto/categorias";
-    }
-
-    @RequestMapping(value = "/compraexitosa", method = RequestMethod.GET)
-    public String compraExitosa(){
-        return "producto/compraexitosa";
-    }
-
-    @RequestMapping(value = "/menuproducto", method = RequestMethod.GET)
-    public String menuProducto(){return "producto/menuproducto";
-    }
-    @RequestMapping(value = "/foro", method = RequestMethod.GET)
-    public String foro(){return "producto/foro";
-    }
-    @RequestMapping(value = "/trafico", method = RequestMethod.GET)
-    public String trafico(){return "producto/trafico";
-    }
-
-    @RequestMapping(value = "/monitoreorendimiento", method = RequestMethod.GET)
-    public String monitoreorendimiento(){return "producto/monitoreorendimiento";
-    }
-    @RequestMapping(value = "/monitoreobienestar", method = RequestMethod.GET)
-    public String monitoreobienestar(){return "producto/monitoreobienestar";
-    }
-
     @RequestMapping(value = "lista", method = RequestMethod.GET)
     public ModelAndView list(){
         ModelAndView mv = new ModelAndView();
@@ -147,6 +120,36 @@ public class ProductoController {
             return new ModelAndView("redirect:/producto/lista");
         }
         return null;
+    }
+
+    @RequestMapping(value = "/categorias", method = RequestMethod.GET)
+    public String catergorias(){
+        return "producto/categorias";
+    }
+
+    @RequestMapping(value = "/compraexitosa", method = RequestMethod.GET)
+    public String compraExitosa(){
+        return "producto/compraexitosa";
+    }
+
+    @RequestMapping(value = "/menuproducto", method = RequestMethod.GET)
+    public String menuProducto(){return "producto/menuproducto";
+    }
+    @RequestMapping(value = "/foro", method = RequestMethod.GET)
+    public String foro(){return "producto/foro";
+    }
+    @RequestMapping(value = "/trafico", method = RequestMethod.GET)
+    public String trafico(){return "producto/trafico";
+    }
+
+    @RequestMapping(value = "/monitoreorendimiento", method = RequestMethod.GET)
+    public String monitoreorendimiento(){return "producto/monitoreorendimiento";
+    }
+    @RequestMapping(value = "/monitoreobienestar", method = RequestMethod.GET)
+    public String monitoreobienestar(){return "producto/monitoreobienestar";
+    }
+    @RequestMapping(value = "/monitoreoasistencia", method = RequestMethod.GET)
+    public String monitoreoasistencia(){return "producto/monitoreoasistencia";
     }
 
 

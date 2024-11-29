@@ -91,7 +91,7 @@
                         <ul class="dropdown-menu">
                             <li><a th:href="@{/producto/monitoreorendimiento}" sec:authorize="isAuthenticated()" >Monitoreo de rendimiento</a></li>
                             <li><a th:href="@{/producto/monitoreobienestar}" sec:authorize="isAuthenticated()">Monitoreo del estado de bienestar durante las sesiones de mindfulness</a></li>
-                            <li><a href="#">Monitoreo del progreso y asistencia en tiempo real durante los recorridos</a></li>
+                            <li><a th:href="@{/producto/monitoreoasistencia}" sec:authorize="isAuthenticated()">Monitoreo del progreso y asistencia en tiempo real durante los recorridos</a></li>
                         </ul>
                     </div>
             </div>
