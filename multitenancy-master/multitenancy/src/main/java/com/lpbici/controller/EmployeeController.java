@@ -3,7 +3,6 @@ package com.lpbici.controller;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +20,6 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeRepository employeeRepository;
-
 	@PersistenceContext
 	private EntityManager entityManager;
 

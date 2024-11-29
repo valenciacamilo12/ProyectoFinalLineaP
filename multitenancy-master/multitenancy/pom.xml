@@ -21,6 +21,9 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
+		<listener>
+			<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+		</listener>
 	</properties>
 
 	<dependencies>
@@ -85,6 +88,8 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
 
 
 

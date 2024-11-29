@@ -41,7 +41,13 @@
                         <p><i class="lni lni-checkmark-circle"></i>Mas de 20 rutas</p>
                         <p><i class="lni lni-close"></i>Alertas de trafico y seguridad</p>
                     </div>
-                    <div class="button"><a class="btn btn-success btn-2" href="#">Seleccionar</a></div>
+                    <div class="button">
+                        <form th:action="@{/usuario/actualizarRol}" method="post">
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"></input>
+                            <input type="hidden" name="rol" value="ROL_RIDEMENTOR"></input>
+                            <button type="submit" class="btn btn-success btn-2">Seleccionar</button>
+                        </form>
+                    </div>
                 </div>
             </div>
             <!-- Single Price Plan Area-->
@@ -62,7 +68,13 @@
                         <p><i class="lni lni-checkmark-circle"></i>Sesiones De Mindfulness</p>
                         <p><i class="lni lni-checkmark-circle"></i>Seguimiento De Rendimiento</p>
                     </div>
-                    <div class="button"><a class="btn btn-warning" href="#">Seleccionar</a></div>
+                    <div class="button">
+                        <form th:action="@{/usuario/migracionTenant}" method="post">
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"></input>
+                            <input type="hidden" name="rol" value="ROL_SPINSENSEI"></input>
+                            <button type="submit" class="btn btn-success btn-2">Seleccionar</button>
+                        </form>
+                    </div>
                 </div>
             </div>
             <!-- Single Price Plan Area-->
@@ -83,7 +95,13 @@
                         <p><i class="lni lni-checkmark-circle"></i>Mejora del Rendimiento Mediante Análisis De Datos</p>
                         <p><i class="lni lni-checkmark-circle"></i>Alertas de trafico y seguridad</p>
                     </div>
-                    <div class="button"><a class="btn btn-info" href="#">Seleccionar</a></div>
+                    <div class="button">
+                        <form th:action="@{/usuario/actualizarRol}" method="post">
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"></input>
+                            <input type="hidden" name="rol" value="ROL_CICLEWISE"></input>
+                            <button type="submit" class="btn btn-success btn-2">Seleccionar</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

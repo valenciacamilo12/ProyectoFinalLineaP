@@ -20,6 +20,10 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
+    public Optional<Usuario> getOne(int id){
+        return Optional.ofNullable(usuarioRepository.findOne(id));
+    }
+
     public Optional<Usuario> getById(int id){
         return Optional.ofNullable(usuarioRepository.findOne(id));
     }
