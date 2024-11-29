@@ -13,7 +13,6 @@
     import org.springframework.security.core.context.SecurityContextHolder;
     import org.springframework.security.crypto.password.PasswordEncoder;
     import org.springframework.stereotype.Controller;
-    import org.springframework.transaction.annotation.Transactional;
     import org.springframework.web.bind.annotation.RequestMapping;
     import org.springframework.web.bind.annotation.RequestMethod;
     import org.springframework.web.bind.annotation.RequestParam;
@@ -99,7 +98,7 @@
                     return new ModelAndView("error").addObject("message", e.getMessage());
                 }
             }
-            return new ModelAndView("redirect:/producto/categorias");
+            return new ModelAndView("redirect:/producto/compraexitosa");
         }
 
         @RequestMapping(value = "/migracionTenant", method = RequestMethod.POST)
@@ -116,9 +115,9 @@
                 roles.add(rolUserMigracion);
                 usuarioMigracion.setRoles(roles);
                 usuarioService.save(usuarioMigracion);
-                return new ModelAndView("redirect:/producto/categorias");
+                return new ModelAndView("redirect:/producto/compraexitosa");
             }
-            return new ModelAndView("redirect:/producto/categorias");
+            return new ModelAndView("redirect:/producto/compraexitosa");
         }
 
         public boolean actualizarRolAntesDeMigracion() {

@@ -27,7 +27,6 @@
     </meta>
 </head>
 <body>
-<header th:insert="fragments :: nav"></header>
 
 <div th:fragment="nav">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
@@ -90,8 +89,8 @@
                         <button class="btn btn-outline" type="button" data-toggle="dropdown">Menu
                             </button>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Monitoreo de rendimiento</a></li>
-                            <li><a href="#">Monitoreo del estado de bienestar durante las sesiones de mindfulness</a></li>
+                            <li><a th:href="@{/producto/monitoreorendimiento}" sec:authorize="isAuthenticated()" >Monitoreo de rendimiento</a></li>
+                            <li><a th:href="@{/producto/monitoreobienestar}" sec:authorize="isAuthenticated()">Monitoreo del estado de bienestar durante las sesiones de mindfulness</a></li>
                             <li><a href="#">Monitoreo del progreso y asistencia en tiempo real durante los recorridos</a></li>
                         </ul>
                     </div>
@@ -120,8 +119,8 @@
                     <button class="btn btn-outline" type="button" data-toggle="dropdown">Menu
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Tráfico,seguridad y sugerencias de mejora</a></li>
-                        <li><a href="#">Recordatorios De Uso</a></li>
+                        <li><a th:href="@{/producto/trafico}" sec:authorize="isAuthenticated()" >Tráfico,seguridad y sugerencias de mejora</a></li>
+                        <li><a href="#" id="reminderLink">Recordatorios De Uso</a></li>
                     </ul>
                 </div>
 
@@ -149,7 +148,7 @@
                     <button class="btn btn-outline" type="button" data-toggle="dropdown">Menu
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Colaboración entre ciclistas</a></li>
+                        <li><a th:href="@{/producto/foro}" sec:authorize="isAuthenticated()">Colaboración entre ciclistas</a></li>
                     </ul>
                 </div>
 
@@ -157,7 +156,23 @@
         </div>
     </div>
 </div>
-
+<div class="modal fade" id="reminderModal" tabindex="-1" role="dialog" aria-labelledby="reminderModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModalLabel" style="color: #000000;">Recuerda usar la app hoy</h5>
+                <!-- Elimina el botón de cierre (la X) de aquí -->
+            </div>
+            <div class="modal-body" style="color: #000000; font-weight: 500;">
+                Tu salud es importante, ¡mantente activo y saludable utilizando nuestra aplicación!
+            </div>
+            <div class="modal-footer">
+                <!-- Aquí agregamos el botón de "Cerrar" -->
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 <style class="cp-pen-styles">@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800");
 body {
   background-color: #dce1e5;
@@ -263,14 +278,6 @@ h1, h2, h3 {
   border: 3px solid #ffffff;
 }
 
-.btn::before {
-  font-family: 'Material Icons';
-  content: '\e037';
-  vertical-align: middle;
-  font-size: 1.5em;
-  padding-right: .5em;
-}
-
 .btn-outline:hover {
   border-color: #2a9fff;
   color: #2a9fff;
@@ -330,6 +337,15 @@ h1, h2, h3 {
     display: block;
     width: 100%;
   }
+  .modal .close {
+    position: absolute; /* Posiciona el botón fuera del flujo normal */
+    top: 10px;          /* Ajusta la posición superior */
+    right: 10px;        /* Ajusta la posición derecha */
+    font-size: 1.5rem;  /* Aumenta el tamaño para mayor visibilidad */
+    z-index: 1050;      /* Asegura que esté encima de otros elementos */
+    opacity: 1;         /* Asegura visibilidad constante */
+    color: #dc3545;     /* Rojo (Bootstrap) para indicar que es un botón de cierre */
+}
 }
 </style>
 <footer th:fragment="footer" class="footer mt-auto py-3 text-center dark bg-dark fixed-bottom">
@@ -338,6 +354,12 @@ h1, h2, h3 {
     </div>
 
     <div th:fragment="scripts">
+        <script>
+            document.getElementById('reminderLink').addEventListener('click', function(event) {
+              event.preventDefault(); // Evitar el comportamiento por defecto del enlace
+              $('#reminderModal').modal('show'); // Mostrar el modal
+            });
+        </script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
