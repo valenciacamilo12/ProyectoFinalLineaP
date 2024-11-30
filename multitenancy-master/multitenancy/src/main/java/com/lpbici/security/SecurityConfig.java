@@ -43,7 +43,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/", "/error", "/index", "/logout", "/login", "/usuario/registro")
+                .antMatchers("/", "/index", "/error", "/fragments", "/forbidden", "/login", "/usuario/registro")
+                .permitAll()
+                .antMatchers("/usuario/registrar")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and()
@@ -54,16 +56,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("nombreUsuario")
                 .passwordParameter("password")
                 .and()
-                .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET"))
+                .exceptionHandling().accessDeniedHandler(accessDeniedHandler())
+                .and()
+                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET"))
                 .logoutSuccessUrl("/login?logout").permitAll()
                 .deleteCookies("JSESSIONID")
                 .and()
-                .csrf(); // Habilitar nuevamente CSRF para producción
+                .rememberMe().tokenValiditySeconds(3600000).key("secret");
     }
-
-
-
-
-
 }
