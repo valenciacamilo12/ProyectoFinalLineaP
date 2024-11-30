@@ -138,19 +138,20 @@ public class ProductoController {
     @RequestMapping(value = "/foro", method = RequestMethod.GET)
     public String foro(){return "producto/foro";
     }
+    @PreAuthorize("hasRole('ROL_CICLEWISE')")
     @RequestMapping(value = "/trafico", method = RequestMethod.GET)
     public String trafico(){return "producto/trafico";
     }
-
+    @PreAuthorize("hasRole('ROL_CICLEWISE')")
     @RequestMapping(value = "/monitoreorendimiento", method = RequestMethod.GET)
     public String monitoreorendimiento(){return "producto/monitoreorendimiento";
     }
+    @PreAuthorize("hasRole('ROL_SPINSENSEI')")
     @RequestMapping(value = "/monitoreobienestar", method = RequestMethod.GET)
     public String monitoreobienestar(){return "producto/monitoreobienestar";
     }
+    @PreAuthorize("hasRole('ROL_RIDEMENTOR')")
     @RequestMapping(value = "/monitoreoasistencia", method = RequestMethod.GET)
     public String monitoreoasistencia(){return "producto/monitoreoasistencia";
     }
-
-
 }

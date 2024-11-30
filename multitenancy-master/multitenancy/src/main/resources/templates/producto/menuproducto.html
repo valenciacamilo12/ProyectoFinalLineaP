@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"></link>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
 
-   <meta charset='UTF-8'>
+    <meta charset='UTF-8'>
     <meta name="robots" content="noindex">
     <link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
     <link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
@@ -21,7 +21,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </meta>
-
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    </meta>
     </meta>
     </meta>
     </meta>
@@ -39,15 +41,16 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <span class="nav-link" >
-                        <i class="fas fa-home"></i> Bienvenido <span class="sr-only">(current)</span></span>
+                        <i class='fas fa-hand-peace' style='font-size:24px'></i> Bienvenido
+                        <span class="sr-only">(current)</span></span>
                 </li>
             </ul>
 
-            <form sec:authorize="isAuthenticated()" class="form-inline my-2 my-lg-0" th:action="@{/logout}" method="post">
+            <a th:href="@{/logout}">
                 <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
                     <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
                 </button>
-            </form>
+            </a>
 
         </div>
     </nav>
@@ -69,21 +72,21 @@
                 <div class="movie-header">
                     <h1 class="movie-title"> Monitoreo en tiempo real</h1>
                 </div>
-                    <div class="dropdown">
-                        <button class="btn btn-outline" type="button" data-toggle="dropdown">Menu
-                            </button>
-                        <ul class="dropdown-menu">
-                            <li><a th:href="@{/producto/monitoreorendimiento}" sec:authorize="isAuthenticated()" >Monitoreo de rendimiento</a></li>
-                            <li><a th:href="@{/producto/monitoreobienestar}" sec:authorize="isAuthenticated()">Monitoreo del estado de bienestar durante las sesiones de mindfulness</a></li>
-                            <li><a th:href="@{/producto/monitoreoasistencia}" sec:authorize="isAuthenticated()">Monitoreo del progreso y asistencia en tiempo real durante los recorridos</a></li>
-                        </ul>
-                    </div>
+                <div class="dropdown">
+                    <button class="btn btn-outline" type="button" data-toggle="dropdown">Menu
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li sec:authorize="hasRole('ROL_CICLEWISE')"><a th:href="@{/producto/monitoreorendimiento}" sec:authorize="isAuthenticated()">&nbsp;<i class='fab fa-audible' style='font-size:24px'>&nbsp;</i>&nbsp;Monitoreo de rendimiento&nbsp;</a></li>
+                        <li sec:authorize="hasRole('ROL_SPINSENSEI')"><a th:href="@{/producto/monitoreobienestar}" sec:authorize="isAuthenticated()">&nbsp;<i class='fas fa-hand-holding-heart'>&nbsp;</i>&nbsp;Monitoreo del estado de bienestar&nbsp; </a></li>
+                        <li sec:authorize="hasRole('ROL_RIDEMENTOR')"><a th:href="@{/producto/monitoreoasistencia}" sec:authorize="isAuthenticated()">&nbsp;<i class='fas fa-biking'>&nbsp;</i>&nbsp;Monitoreo del progreso y asistencia&nbsp;</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Card 2: Back to the Future -->
-    <div class="movie-card">
+    <div class="movie-card" sec:authorize="hasRole('ROL_CICLEWISE')">
         <div class="color-overlay">
             <div class="movie-share">
                 <a class="movie-share__icon" href="#">
@@ -103,11 +106,35 @@
                     <button class="btn btn-outline" type="button" data-toggle="dropdown">Menu
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a th:href="@{/producto/trafico}" sec:authorize="isAuthenticated()" >Tráfico,seguridad y sugerencias de mejora</a></li>
-                        <li><a href="#" id="reminderLink">Recordatorios De Uso</a></li>
+                        <li sec:authorize="hasRole('ROL_CICLEWISE')"><a th:href="@{/producto/trafico}" sec:authorize="isAuthenticated()" >&nbsp;<i class="material-icons">traffic</i>&nbsp;Tráfico,seguridad y sugerencias&nbsp;</a></li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="movie-card" sec:authorize="hasRole('ROL_RIDEMENTOR')">
+        <div class="color-overlay">
+            <div class="movie-share">
+                <a class="movie-share__icon" href="#">
+                    <i class="material-icons">&#xe87d;</i>
+                </a>
+                <a class="movie-share__icon" href="#">
+                    <i class="material-icons">&#xe253;</i>
+                </a>
+            </div>
+            <div class="movie-content">
+                <div class="movie-header">
+                    <h1 class="movie-title"> Alertas en tiempo real</h1>
+                </div>
+                <p class="movie-desc"></p>
 
+                <div class="dropdown">
+                    <button class="btn btn-outline" type="button" data-toggle="dropdown">Menu
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li sec:authorize="hasRole('ROL_RIDEMENTOR')"><a href="#" id="reminderLink">&nbsp;<i class="material-icons">accessibility</i>&nbsp;Recordatorios De Uso&nbsp;</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -132,7 +159,7 @@
                     <button class="btn btn-outline" type="button" data-toggle="dropdown">Menu
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a th:href="@{/producto/foro}" sec:authorize="isAuthenticated()">Colaboración entre ciclistas</a></li>
+                        <li><a th:href="@{/producto/foro}" sec:authorize="isAuthenticated()">&nbsp;<i class='fas fa-users'></i>&nbsp;Colaboración entre ciclistas&nbsp;</a></li>
                     </ul>
                 </div>
 
@@ -321,14 +348,24 @@ h1, h2, h3 {
     display: block;
     width: 100%;
   }
-  .modal .close {
+.modal .close {
     position: absolute; /* Posiciona el botón fuera del flujo normal */
     top: 10px;          /* Ajusta la posición superior */
     right: 10px;        /* Ajusta la posición derecha */
     font-size: 1.5rem;  /* Aumenta el tamaño para mayor visibilidad */
     z-index: 1050;      /* Asegura que esté encima de otros elementos */
-    opacity: 1;         /* Asegura visibilidad constante */
     color: #dc3545;     /* Rojo (Bootstrap) para indicar que es un botón de cierre */
+    background-color: transparent; /* Sin fondo, para diseño claro */
+    border: none;       /* Quita bordes */
+    cursor: default;    /* Mantiene un cursor normal */
+    text-shadow: none;  /* Elimina cualquier efecto de sombra en el texto */
+    opacity: 100;         /* Asegura que no sea transparente */
+}
+.modal .close:hover,
+.modal .close:focus {
+    color: #dc3545;     /* Mantiene el mismo color al pasar o enfocar */
+    background-color: transparent; /* Sin fondo en hover */
+    text-decoration: none; /* Quita subrayados o decoraciones de texto */
 }
 }
 </style>
