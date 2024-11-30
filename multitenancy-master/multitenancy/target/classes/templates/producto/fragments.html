@@ -22,22 +22,6 @@
                         <a class="nav-link" th:href="@{/}">
                             <i class="fas fa-home"></i> Inicio <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item active" sec:authorize="isAuthenticated() && !hasRole('ROLE_ADMIN')">
-                        <a class="nav-link" th:href="@{/producto/lista}">
-                            <i class="far fa-list-alt"></i> Lista</a>
-                    </li>
-                    <li class="nav-item dropdown active" sec:authorize="hasRole('ROLE_ADMIN')">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-toolbox"></i> Administración
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" th:href="@{/producto/lista}">
-                                <i class="far fa-list-alt"></i> Lista</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" th:href="@{/producto/nuevo}">
-                                <i class="fas fa-plus-circle"></i> Nuevo Producto</a>
-                        </div>
-                    </li>
                 </ul>
 
                     <a th:href="@{/login}" sec:authorize="!isAuthenticated()"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">

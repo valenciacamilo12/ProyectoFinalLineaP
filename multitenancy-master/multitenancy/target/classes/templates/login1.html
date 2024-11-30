@@ -9,6 +9,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
 </head>
 <body>
+<div th:fragment="nav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <a class="navbar-brand" href="#">Bici+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/}">
+                        <i class="fas fa-home"></i> Inicio <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+
+            <form sec:authorize="isAuthenticated()" class="form-inline my-2 my-lg-0" th:action="@{/logout}" method="post">
+                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                </button>
+            </form>
+
+        </div>
+    </nav>
+</div>
+<footer th:fragment="footer" class="footer mt-auto py-3 text-center dark bg-dark fixed-bottom">
+    <div class="container">
+        <span class="text-muted">&copy;Bici+</span>
+    </div>
+</footer>
 <div id="main-wrapper" class="container">
     <div class="row justify-content-center">
         <div class="col-xl-10">
@@ -21,20 +50,19 @@
                                     <h3 class="h4 font-weight-bold text-theme">Login</h3>
                                 </div>
 
-                                <h6 class="h5 mb-0">Welcome back!</h6>
-                                <p class="text-muted mt-2 mb-5">Enter your email address and password to access admin panel.</p>
+                                <h6 class="h5 mb-0">Bienvenido SpinSensei!</h6>
+                                <p class="text-muted mt-2 mb-5">Ingrese su usuario y contraseña para acceder al panel de administración.</p>
 
                                 <form>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
+                                        <label for="exampleInputEmail1">Nombre de Usuario</label>
                                         <input type="email" class="form-control" id="exampleInputEmail1"></input>
                                     </div>
                                     <div class="form-group mb-5">
-                                        <label for="exampleInputPassword1">Password</label>
+                                        <label for="exampleInputPassword1">Contraseña</label>
                                         <input type="password" class="form-control" id="exampleInputPassword1"></input>
                                     </div>
-                                    <button type="submit" class="btn btn-theme">Login</button>
-                                    <a href="#l" class="forgot-link float-right text-primary">Forgot password?</a>
+                                    <button type="submit" class="btn btn-theme">Iniciar Sesión</button>
                                 </form>
                             </div>
                         </div>
@@ -43,10 +71,8 @@
                             <div class="account-block rounded-right">
                                 <div class="overlay rounded-right"></div>
                                 <div class="account-testimonial">
-                                    <h4 class="text-white mb-4">This  beautiful theme yours!</h4>
-                                    <p class="lead text-white">"Best investment i made for a long time. Can only recommend it for other users."</p>
-                                    <p>- Admin User</p>
-                                </div>
+                                    <p class="lead text-white">"Pedalea hacia la libertad, el camino lo haces tú. 🚴‍♂️"</p>
+                                 </div>
                             </div>
                         </div>
                     </div>
@@ -68,7 +94,7 @@
 
 <style>
     body{
-        margin-top:20px;
+        margin-top:0;
         background: #f6f9fc;
     }
     .account-block {
@@ -102,12 +128,12 @@
     }
 
     .text-theme {
-        color: #5369f8 !important;
+        color: #48494d !important;
     }
 
     .btn-theme {
-        background-color: #5369f8;
-        border-color: #5369f8;
+        background-color: #1f9925;
+        border-color: #1f9925;
         color: #fff;
     }
 </style>

@@ -10,6 +10,35 @@
     <link rel="stylesheet" href="stylesCategoria.css"></link>
 </head>
 <body>
+<div th:fragment="nav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <a class="navbar-brand" href="#">Bici+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/producto/menuproducto}">
+                        <i class="fas fa-home"></i> Inicio <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+
+            <form sec:authorize="isAuthenticated()" class="form-inline my-2 my-lg-0" th:action="@{/logout}" method="post">
+                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                </button>
+            </form>
+
+        </div>
+    </nav>
+</div>
+<footer th:fragment="footer" class="footer mt-auto py-3 text-center dark bg-dark fixed-bottom">
+    <div class="container">
+        <span class="text-muted">&copy;Bici+</span>
+    </div>
+</footer>
 <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css"></link>
 <section class="price_plan_area section_padding_130_80" id="pricing">
     <div class="container">

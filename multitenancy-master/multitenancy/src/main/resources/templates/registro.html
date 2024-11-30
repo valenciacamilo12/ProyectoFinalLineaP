@@ -10,7 +10,23 @@
 </head>
 <body>
 <header th:insert="fragments :: nav"></header>
+<div th:fragment="nav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <a class="navbar-brand" href="#">Bici+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/}">
+                        <i class="fas fa-home"></i> Inicio <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
 <div class="container d-flex justify-content-center">
     <div class="card">
         <div class="card-header">
@@ -56,6 +72,12 @@
         </div>
     </div>
 </div>
+
+<footer th:fragment="footer" class="footer mt-auto py-3 text-center dark bg-dark fixed-bottom">
+    <div class="container">
+        <span class="text-muted">&copy;Bici+</span>
+    </div>
+</footer>
 
 <footer th:insert="fragments :: footer"></footer>
 <div th:insert="fragments :: scripts">
