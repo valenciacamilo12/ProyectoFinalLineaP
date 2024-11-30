@@ -21,7 +21,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </meta>
-
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    </meta>
     </meta>
     </meta>
     </meta>
@@ -39,11 +41,12 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <span class="nav-link" >
-                        <i class="fas fa-home"></i> Bienvenido <span class="sr-only">(current)</span></span>
+                        <i class='fas fa-hand-peace' style='font-size:24px'></i> Bienvenido
+                        <span class="sr-only">(current)</span></span>
                 </li>
             </ul>
 
-            <form sec:authorize="isAuthenticated()" class="form-inline my-2 my-lg-0" th:action="@{/logout}" method="post">
+            <form class="form-inline my-2 my-lg-0" th:href="@{/logout}" method="post">
                 <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
                     <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
                 </button>
@@ -73,9 +76,9 @@
                         <button class="btn btn-outline" type="button" data-toggle="dropdown">Menu
                             </button>
                         <ul class="dropdown-menu">
-                            <li><a th:href="@{/producto/monitoreorendimiento}" sec:authorize="isAuthenticated()" >Monitoreo de rendimiento</a></li>
-                            <li><a th:href="@{/producto/monitoreobienestar}" sec:authorize="isAuthenticated()">Monitoreo del estado de bienestar durante las sesiones de mindfulness</a></li>
-                            <li><a th:href="@{/producto/monitoreoasistencia}" sec:authorize="isAuthenticated()">Monitoreo del progreso y asistencia en tiempo real durante los recorridos</a></li>
+                            <li><a th:href="@{/producto/monitoreorendimiento}" sec:authorize="isAuthenticated()" >&nbsp;<i class='fab fa-audible' style='font-size:24px'>&nbsp;</i>&nbsp;Monitoreo de rendimiento&nbsp;</a></li>
+                            <li><a th:href="@{/producto/monitoreobienestar}" sec:authorize="isAuthenticated()">&nbsp;<i class='fas fa-hand-holding-heart'>&nbsp;</i>&nbsp;Monitoreo del estado de bienestar&nbsp; </a></li>
+                            <li><a th:href="@{/producto/monitoreoasistencia}" sec:authorize="isAuthenticated()">&nbsp;<i class='fas fa-biking'>&nbsp;</i>&nbsp;Monitoreo del progreso y asistencia&nbsp;</a></li>
                         </ul>
                     </div>
             </div>
@@ -103,8 +106,8 @@
                     <button class="btn btn-outline" type="button" data-toggle="dropdown">Menu
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a th:href="@{/producto/trafico}" sec:authorize="isAuthenticated()" >Tráfico,seguridad y sugerencias de mejora</a></li>
-                        <li><a href="#" id="reminderLink">Recordatorios De Uso</a></li>
+                        <li><a th:href="@{/producto/trafico}" sec:authorize="isAuthenticated()" >&nbsp;<i class="material-icons">traffic</i>&nbsp;Tráfico,seguridad y sugerencias&nbsp;</a></li>
+                        <li><a href="#" id="reminderLink">&nbsp;<i class="material-icons">accessibility</i>&nbsp;Recordatorios De Uso&nbsp;</a></li>
                     </ul>
                 </div>
 
@@ -132,7 +135,7 @@
                     <button class="btn btn-outline" type="button" data-toggle="dropdown">Menu
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a th:href="@{/producto/foro}" sec:authorize="isAuthenticated()">Colaboración entre ciclistas</a></li>
+                        <li><a th:href="@{/producto/foro}" sec:authorize="isAuthenticated()">&nbsp;<i class='fas fa-users'></i>&nbsp;Colaboración entre ciclistas&nbsp;</a></li>
                     </ul>
                 </div>
 
